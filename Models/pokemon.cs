@@ -4,9 +4,8 @@ using MongoDB.Bson.Serialization.Attributes;
 public class Pokemon
 {
     
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    public string? Id { get; set; }
+   
+    public int Id { get; set; }
 
     [BsonElement("Name")]
     public string Name { get; set; } = null!;
@@ -15,7 +14,7 @@ public class Pokemon
     public string Type { get; set; } = null!;
     [BsonElement("Level")]
     public int Level { get; set; }
-    
+
     [BsonElement("Ability")]
 
     public string Ability { get; set; } = null!;

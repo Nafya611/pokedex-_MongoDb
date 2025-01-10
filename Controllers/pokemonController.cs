@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-// using PokedexAPI.Models;
-
 
 [ApiController]
 [Route("api/[controller]")]
@@ -20,8 +18,8 @@ public class PokemonController : ControllerBase
         return Ok(pokemons);
     }
 
-    [HttpGet("{id:length(24)}")]
-    public async Task<ActionResult<Pokemon>> GetById(string id)
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Pokemon>> GetById(int id)
     {
         var pokemon = await _pokemonService.GetByIdAsync(id);
         if (pokemon == null)
@@ -39,8 +37,8 @@ public class PokemonController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = newPokemon.Id }, newPokemon);
     }
 
-    [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Update(string id, Pokemon updatedPokemon)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Update(int id, Pokemon updatedPokemon)
     {
         var existingPokemon = await _pokemonService.GetByIdAsync(id);
         if (existingPokemon == null)
@@ -54,8 +52,8 @@ public class PokemonController : ControllerBase
         return NoContent();
     }
 
-    [HttpDelete("{id:length(24)}")]
-    public async Task<IActionResult> Delete(string id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
     {
         var pokemon = await _pokemonService.GetByIdAsync(id);
         if (pokemon == null)
