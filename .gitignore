@@ -1,0 +1,52 @@
+# Ignore build output directories
+/bin/
+/obj/
+
+/# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignore the .vs directory (Visual Studio)
+.vs/
+
+# Ignore the .idea directory (JetBrains Rider)
+.idea/
+
+# Ignore generated files from ASP.NET Core
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# Ignore the secrets and local settings files
+secrets.json
+appsettings.local.json
+
+# Ignore node_modules if you're using Node.js for frontend
+node_modules/
+
+# Ignore all logs
+*.log
+
+# Ignore dependency files for NuGet packages
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+
+# Ignore test result files
+TestResults/
+
+# Ignore temporary files created by Visual Studio
+*.dbmdl
+*.bak
+*.backup
+
+# Ignore Rider config files
+.idea/
+
+# Ignore .env files
+.env
+
+# Ignore the publish folder for released builds
+/publish/
